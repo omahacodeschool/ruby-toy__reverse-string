@@ -1,11 +1,11 @@
 def reverse_characters(str)
-  str = str.chars
+  reverse_characters = str.chars
   new_str = ''
   until new_str.length == str.length
-  new_str << str[-1] 
-  str.pop
+  new_str << reverse_characters[-1]
+  reverse_characters.pop 
   end
-  return new_str 
+  return new_str
 end
  
 
