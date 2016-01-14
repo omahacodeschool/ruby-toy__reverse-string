@@ -5,9 +5,8 @@ def reverse_characters(str)
     while i < text.length
         i += 1
         arr_1 << text[-i]
-        new_string = arr_1.join
     end
-    return new_string
+    new_string = arr_1.join
 end
 reverse_characters("Today is a good day")
 
