@@ -13,12 +13,14 @@ end
 
 def reverse_words(str)
     #create array dividing up string into individual word strings, but defining a word as a group of characters divided by a space (or with nil in front of or after due to it being at the beginning or end of string)
-    array = str.split(figure out how to do above thing)
+    array = str.split
     #create holder for to-be-reversed words
     reverse_arr = []
     #insert each word-string in the first position of the new holder array
     array.each do |n|
         reverse_arr.insert(1,n)
+        reverse_arr.join(" ")
     end
-    return reverse_arr.join
+    x = reverse_arr.join(" ")
+    return x[1..-1]
 end
