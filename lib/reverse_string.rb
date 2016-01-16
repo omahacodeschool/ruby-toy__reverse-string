@@ -1,19 +1,13 @@
 def reverse_characters(str)
-    str = str.split(//);
-    str2 = []
-    str.length.times do
-        str2[0..-1] = str[-1..0]
-    end
-    return str2.join("")
+    str = str.split(//)
+    x = str.length
+    x.times {x = x - 1; print str[x]}
+    return 
 end
-
-
 
 def reverse_words(str)
     str = str.split(/ /)
-    str2 = []
-    str.length.times do
-        str2[0..-1] = str[-1..0]
-    end
-    return str2.join(" ")
+    x = str.length
+    x.times {x = x - 1; print str[x]}
+    return 
 end
