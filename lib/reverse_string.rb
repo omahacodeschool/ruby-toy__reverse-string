@@ -4,7 +4,7 @@ def reverse_characters(str)
         while array.length > 0
             array2 << array.pop
         end
-return array2.join
+    return array2.join
 end
 reverse_characters("Today is a good day")
 
@@ -14,7 +14,7 @@ def reverse_words(str)
         while array.length > 0
             array2 << array.pop
         end
-return array2.join
+    return array2.join
 end
 reverse_words("Today is a good day")
 
