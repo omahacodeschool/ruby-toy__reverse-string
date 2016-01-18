@@ -1,7 +1,5 @@
 def reverse_characters(str)
-puts 'Please give me a sentance to mirror'
-string = gets.chomp
-stingray = string.split("")
+stingray = str.split("")
 mirror = []
 until stingray.empty?
     mirror << stingray.pop
