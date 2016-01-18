@@ -1,7 +1,10 @@
-def backwards(a)
- a = a.length - 1
- while a >= 0
- return a
+def reverse_characters
+  a = "Hello world."
+  a.length
+  b = []
+  a[i] = -1
+    while a >= 0 do i 
+  end
 end
 
-puts ( backwards("Hello world.") )
+print b 
