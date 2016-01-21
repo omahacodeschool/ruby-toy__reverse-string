@@ -15,6 +15,7 @@ end
 def reverse_words(str)
     array1 = []
     array2 = []
+    
     str.split(" ").each do |c|
         array1 << c
     end
