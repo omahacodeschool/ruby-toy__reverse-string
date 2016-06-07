@@ -1,3 +1,31 @@
 #!/bin/bash
 
-rake test
+# Collect testable files as 'files'.
+i=0
+while read line; do
+  files[ $i ]="$line"        
+  (( i++ ))
+done < <(ls tests/*test.rb)
+
+echo "Which problem do you want to check?"
+echo ""
+
+# Display list of files and choice numbers.
+choice_counter=0
+for f in lib/*.rb; do
+  echo $((choice_counter+=1))\) $f
+done
+
+# Collect user's choice as 'choice'.
+echo ""
+echo -n "Enter the number and then press Enter/Return: "
+read choice
+echo ""
+
+# Run test or return error.
+if [[ -n ${choice//[0-9]/} ]]; then
+  echo "That is not a valid input. Start over."
+else
+  echo "Running: \`rake test TEST=${files[ (choice - 1) ]}\`"
+  rake test TEST=${files[ (choice - 1) ]}
+fi
