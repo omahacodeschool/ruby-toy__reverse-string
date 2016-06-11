@@ -1,14 +1,23 @@
 def reverse_characters(str)
+    #create an empty array for the separated string characters to be added to
     array_of_characters = []
+    #find the string length and add it to a variable
     x = str.length
+    #split the string and add each character to the empty array
     array_of_characters.push(str.split(""))
+    #create another empty array to put the characters back into
     new_string = []
+    #iterate through each of the characters...
     array_of_characters.each do |i|
+        #and until the string length (x) is less than zero...
         until x < 0
+            #add each character to the empty array starting with the last character
             new_string.push(i[x])
+            #subtract from the string length after each iteration
             x -= 1
         end
     end
+    #return the newly reversed string
     new_string.join
 end
 
@@ -19,26 +28,9 @@ Algorithmic Thought Process:
     last element in the first array would be moved to the new_array[0] position and then the 2nd to last
     element would move to the new_array[1] position and so on until the first array is empty. Use .join to
     bring the elements in the new_array back together to form a reversed version of the original string.
-    
-    I used basically the same thought process for reversing each character in a string and got the result
-    I was looking for so I thought that doing something similar with each word would work too. Any thoughts?
-    Comments? Concerns? Am I way off for reversing the words in a string? Where are all those spaces coming from? This is the failure that I'm getting back:
-    # Running:
-
-.F
-
-Finished in 0.011765s, 170.0021 runs/s, 170.0021 assertions/s.
-
-  1) Failure:
-ReverseStringTest#test_reverse_words [/home/ubuntu/workspace/tests/reverse_string_test.rb:12]:
---- expected
-+++ actual
-@@ -1 +1,2 @@
--"day good a is Today"
-+# encoding: US-ASCII
-+"               day good a is Today"
 =end
 
+=begin
 def reverse_words(str)
     words_array = []
     new_array = []
@@ -50,5 +42,20 @@ def reverse_words(str)
             x -= 1
         end
     end
+    new_array.join(" ")
+end
+=end
+
+def reverse_words(str)
+    #create variable to hold the split string separated at the "spaces"
+    split_string = str.split(" ")
+    #create a new array to add to later
+    new_array = []
+    #go through each word in the string
+    split_string.each do |word|
+        #and add them to the beginning of the new array
+        new_array.unshift(word)
+    end
+    #return the array but joined back into a singular string
     new_array.join(" ")
 end
